@@ -29,14 +29,14 @@ public class Customer extends Entity {
     }
 
     public CustomerDesire generateDesire() {
-        desire = model.scenario.getActiveDecisionStrategy().getDecision(model);
+        desire = model.getActiveDecisionStrategy().getDecision(model);
         return desire;
     }
 
     public PaymentMethod generatePaymentMethod() {
         int randomNumber = random.nextInt(100);
 
-        if (randomNumber < model.scenario.getCARD_PAYMENT_PROBABILTY()) {
+        if (randomNumber < model.getCARD_PAYMENT_PROBABILTY()) {
             preferredPaymentMethod = PaymentMethod.CARD;
         } else {
             preferredPaymentMethod = PaymentMethod.CASH;

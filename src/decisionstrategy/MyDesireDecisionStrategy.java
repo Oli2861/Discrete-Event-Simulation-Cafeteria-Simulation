@@ -39,7 +39,7 @@ public class MyDesireDecisionStrategy implements DesireDecisionStrategy {
         int rawProbabilityMenu1 = 60;
         int rawProbabilityMenu2 = 25;
         int randomNumber = random.nextInt(100 + bonus);
-        System.out.println(menu1QueueLength);
+        //System.out.println(menu1QueueLength);
         // Calculate bonuses based on the total queue length for each queue
         float bonusMenu1 = (1 - percentageMenu1) * bonus;
         float bonusMenu2 = (1 - percentageMenu2) * bonus;
@@ -47,7 +47,7 @@ public class MyDesireDecisionStrategy implements DesireDecisionStrategy {
         // Determine thresholds for to determine when a customer chooses a certain queue.
         float thresholdMenu1 = rawProbabilityMenu1 + bonusMenu1;
         float thresholdMenu2 = thresholdMenu1 + rawProbabilityMenu2 + bonusMenu2;
-        System.out.println(rawProbabilityMenu1 + " + " + bonusMenu1 + " = " + thresholdMenu1);
+        //System.out.println(rawProbabilityMenu1 + " + " + bonusMenu1 + " = " + thresholdMenu1);
         if (randomNumber < thresholdMenu1) {
             return CustomerDesire.MENU1;
         } else if (randomNumber < thresholdMenu2) {
