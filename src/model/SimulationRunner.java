@@ -20,7 +20,7 @@ public class SimulationRunner {
           - e) Cash payment only in benchmarking scenario: CardPaymentOnlyScenario
           - Improved scenario is used to test different configurations to improve the system.
          */
-        //runSimulation(new ImprovedScenario());
+        runSimulation(new ImprovedScenario());
         //searchArrivalRateAndRerunSimulation(false);
     }
 
@@ -110,6 +110,7 @@ public class SimulationRunner {
         for (int i = 0; i < numberOfSimulations; i++) {
             double meanCustomerSystemTime = runSimulation(scenario);
             double loss = allowedSystemTime - meanCustomerSystemTime;
+            System.out.println(loss + " = " + allowedSystemTime + " - " + meanCustomerSystemTime);
             lossList.add(loss);
             if (loss <= 0) return loss;
         }

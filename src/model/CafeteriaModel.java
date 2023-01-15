@@ -156,7 +156,7 @@ public class CafeteriaModel extends Model {
 
     private void initDistributions() {
         customerArrivalTime = new ContDistExponential(this, "CustomerArrivalTime", scenario.getMEAN_TIME_BETWEEN_ARRIVALS(), true, true);
-        foodServingTimeMenu1 = new ContDistExponential(this, "Menu1ServingTime", scenario.getMEAN_MENU_2(), true, true);
+        foodServingTimeMenu1 = new ContDistExponential(this, "Menu1ServingTime", scenario.getMEAN_MENU_1(), true, true);
         foodServingTimeMenu2 = new ContDistNormal(this, "Menu2ServingTime", scenario.getMEAN_MENU_2(), scenario.getSTANDARD_DEVIATION(), true, true);
         snackGrabbingTime = new ContDistUniform(this, "SnackGrabbingTimeStream", scenario.getMIN_SNACK_GRABBING_TIME(), scenario.getMAX_SNACK_GRABBING_TIME(), true, true);
         checkoutTimeCash = new ContDistUniform(this, "CheckoutCashTimeStream", scenario.getMIN_CHECKOUT_TIME_CASH(), scenario.getMAX_CHECKOUT_TIME_CASH(), true, true);
